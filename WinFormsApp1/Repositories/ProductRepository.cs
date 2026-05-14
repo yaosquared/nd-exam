@@ -1,6 +1,7 @@
 ﻿using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Text;
 using WinFormsApp1.Models;
 
@@ -20,12 +21,9 @@ namespace WinFormsApp1.Repositories
                 {
                     connection.Open();
 
-                    string query = @"
-                        SELECT * 
-                        FROM products
-                        ORDER BY ISNULL(updated_at, created_at) DESC";
-                    using (SqlCommand command = new SqlCommand(query, connection))
+                    using (SqlCommand command = new SqlCommand("sp_GetProducts", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
                             while (reader.Read())
@@ -66,9 +64,9 @@ namespace WinFormsApp1.Repositories
                 {
                     connection.Open();
 
-                    string query = "SELECT * FROM products WHERE id = @id";
-                    using (SqlCommand command = new SqlCommand(query, connection))
+                    using (SqlCommand command = new SqlCommand("sp_GetProduct", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
                         command.Parameters.AddWithValue("@id", id);
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
@@ -110,30 +108,9 @@ namespace WinFormsApp1.Repositories
                 {
                     connection.Open();
 
-                    string query = @"
-                        INSERT INTO products
-                        (
-                            name,
-                            description,
-                            category,
-                            price,
-                            stock_quantity,
-                            is_active,
-                            discount
-                        )
-                        VALUES
-                        (
-                            @name,
-                            @description,
-                            @category,
-                            @price,
-                            @stockQuantity,
-                            @isActive,
-                            @discount
-                        )";
-
-                    using (SqlCommand command = new SqlCommand(query, connection))
+                    using (SqlCommand command = new SqlCommand("sp_CreateProduct", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
                         command.Parameters.AddWithValue("@name", product.Name);
                         command.Parameters.AddWithValue("@description", product.Description);
                         command.Parameters.AddWithValue("@category", product.Category);
@@ -160,20 +137,9 @@ namespace WinFormsApp1.Repositories
                 {
                     connection.Open();
 
-                    string query = @"
-                        UPDATE products
-                        SET
-                            name = @name,
-                            description = @description,
-                            category = @category,
-                            price = @price,
-                            stock_quantity = @stockQuantity,
-                            is_active = @isActive,
-                            discount = @discount,
-                            updated_at = GETDATE()
-                        WHERE id = @id";
-                    using (SqlCommand command = new SqlCommand(query, connection))
+                    using (SqlCommand command = new SqlCommand("sp_UpdateProduct", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
                         command.Parameters.AddWithValue("@id", product.Id);
                         command.Parameters.AddWithValue("@name", product.Name);
                         command.Parameters.AddWithValue("@description", product.Description);
@@ -201,9 +167,9 @@ namespace WinFormsApp1.Repositories
                 {
                     connection.Open();
 
-                    string query = "DELETE FROM products WHERE id = @id";
-                    using (SqlCommand command = new SqlCommand(query, connection))
+                    using (SqlCommand command = new SqlCommand("sp_DeleteProduct", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
                         command.Parameters.AddWithValue("@id", id);
                         command.ExecuteNonQuery();
                     }
