@@ -17,6 +17,14 @@ namespace WinFormsApp1
             InitializeComponent();
 
             this.DialogResult = DialogResult.Cancel;
+
+            // hide id and date fields by default (add mode)
+            label_id.Visible = false;
+            value_id.Visible = false;
+            label_createdAt.Visible = false;
+            value_createdAt.Visible = false;
+            label_updatedAt.Visible = false;
+            value_updatedAt.Visible = false;
         }
 
         private Product _editingProduct = null;
@@ -27,6 +35,19 @@ namespace WinFormsApp1
 
             this.Text = "Edit Product";
             this.label_title.Text = "Edit Product";
+
+            // show id and date fields
+            label_id.Visible = true;
+            value_id.Visible = true;
+            label_createdAt.Visible = true;
+            value_createdAt.Visible = true;
+            label_updatedAt.Visible = true;
+            value_updatedAt.Visible = true;
+
+            // populate id and date fields
+            value_id.Text = product.Id.ToString();
+            value_createdAt.Text = product.CreatedAt.ToString();
+            value_updatedAt.Text = product.UpdatedAt.ToString();
 
             this.textBox_name.Text = product.Name;
             this.textBox_category.Text = product.Category;
@@ -44,6 +65,20 @@ namespace WinFormsApp1
 
         private void btn_save_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(textBox_name.Text))
+            {
+                MessageBox.Show("Name is required.");
+                return;
+            }
+
+            if (!decimal.TryParse(textBox_price.Text, out decimal price) ||
+                !int.TryParse(textBox_stockQuantity.Text, out int stock) ||
+                !decimal.TryParse(textBox_discount.Text, out decimal discount))
+            {
+                MessageBox.Show("Please enter valid values for Price, Stock, and Discount.");
+                return;
+            }
+
             var repo = new ProductRepository();
 
             if (_editingProduct == null)

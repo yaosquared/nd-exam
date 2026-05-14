@@ -29,25 +29,25 @@
         private void InitializeComponent()
         {
             label_title = new Label();
-            label1 = new Label();
             label_id = new Label();
-            label2 = new Label();
+            value_id = new Label();
+            label_name = new Label();
             textBox_name = new TextBox();
             textBox_desc = new TextBox();
-            label3 = new Label();
+            label_dec = new Label();
             textBox_category = new TextBox();
-            label4 = new Label();
+            label_category = new Label();
             textBox_price = new TextBox();
-            label5 = new Label();
+            label_price = new Label();
             textBox_stockQuantity = new TextBox();
-            label6 = new Label();
-            label7 = new Label();
+            labelstockQuantity = new Label();
+            label_isActive = new Label();
             textBox_discount = new TextBox();
-            label8 = new Label();
-            label9 = new Label();
-            label10 = new Label();
-            label_createAt = new Label();
+            label_discount = new Label();
+            label_createdAt = new Label();
             label_updatedAt = new Label();
+            value_createdAt = new Label();
+            value_updatedAt = new Label();
             btn_cancel = new Button();
             btn_save = new Button();
             checkBox_isActive = new CheckBox();
@@ -63,31 +63,31 @@
             label_title.Text = "Create Client";
             label_title.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(111, 81);
-            label1.Name = "label1";
-            label1.Size = new Size(63, 15);
-            label1.TabIndex = 2;
-            label1.Text = "Product ID";
-            // 
             // label_id
             // 
             label_id.AutoSize = true;
-            label_id.Location = new Point(199, 81);
+            label_id.Location = new Point(111, 81);
             label_id.Name = "label_id";
-            label_id.Size = new Size(0, 15);
-            label_id.TabIndex = 3;
+            label_id.Size = new Size(63, 15);
+            label_id.TabIndex = 2;
+            label_id.Text = "Product ID";
             // 
-            // label2
+            // value_id
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(111, 116);
-            label2.Name = "label2";
-            label2.Size = new Size(39, 15);
-            label2.TabIndex = 4;
-            label2.Text = "Name";
+            value_id.AutoSize = true;
+            value_id.Location = new Point(199, 81);
+            value_id.Name = "value_id";
+            value_id.Size = new Size(0, 15);
+            value_id.TabIndex = 3;
+            // 
+            // label_name
+            // 
+            label_name.AutoSize = true;
+            label_name.Location = new Point(111, 116);
+            label_name.Name = "label_name";
+            label_name.Size = new Size(39, 15);
+            label_name.TabIndex = 4;
+            label_name.Text = "Name";
             // 
             // textBox_name
             // 
@@ -103,14 +103,14 @@
             textBox_desc.Size = new Size(500, 23);
             textBox_desc.TabIndex = 7;
             // 
-            // label3
+            // label_dec
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(111, 145);
-            label3.Name = "label3";
-            label3.Size = new Size(67, 15);
-            label3.TabIndex = 6;
-            label3.Text = "Description";
+            label_dec.AutoSize = true;
+            label_dec.Location = new Point(111, 145);
+            label_dec.Name = "label_dec";
+            label_dec.Size = new Size(67, 15);
+            label_dec.TabIndex = 6;
+            label_dec.Text = "Description";
             // 
             // textBox_category
             // 
@@ -119,14 +119,14 @@
             textBox_category.Size = new Size(500, 23);
             textBox_category.TabIndex = 9;
             // 
-            // label4
+            // label_category
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(111, 174);
-            label4.Name = "label4";
-            label4.Size = new Size(55, 15);
-            label4.TabIndex = 8;
-            label4.Text = "Category";
+            label_category.AutoSize = true;
+            label_category.Location = new Point(111, 174);
+            label_category.Name = "label_category";
+            label_category.Size = new Size(55, 15);
+            label_category.TabIndex = 8;
+            label_category.Text = "Category";
             // 
             // textBox_price
             // 
@@ -135,14 +135,14 @@
             textBox_price.Size = new Size(500, 23);
             textBox_price.TabIndex = 11;
             // 
-            // label5
+            // label_price
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(111, 203);
-            label5.Name = "label5";
-            label5.Size = new Size(33, 15);
-            label5.TabIndex = 10;
-            label5.Text = "Price";
+            label_price.AutoSize = true;
+            label_price.Location = new Point(111, 203);
+            label_price.Name = "label_price";
+            label_price.Size = new Size(33, 15);
+            label_price.TabIndex = 10;
+            label_price.Text = "Price";
             // 
             // textBox_stockQuantity
             // 
@@ -151,23 +151,23 @@
             textBox_stockQuantity.Size = new Size(500, 23);
             textBox_stockQuantity.TabIndex = 13;
             // 
-            // label6
+            // labelstockQuantity
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(111, 232);
-            label6.Name = "label6";
-            label6.Size = new Size(85, 15);
-            label6.TabIndex = 12;
-            label6.Text = "Stock Quantity";
+            labelstockQuantity.AutoSize = true;
+            labelstockQuantity.Location = new Point(111, 232);
+            labelstockQuantity.Name = "labelstockQuantity";
+            labelstockQuantity.Size = new Size(85, 15);
+            labelstockQuantity.TabIndex = 12;
+            labelstockQuantity.Text = "Stock Quantity";
             // 
-            // label7
+            // label_isActive
             // 
-            label7.AutoSize = true;
-            label7.Location = new Point(111, 261);
-            label7.Name = "label7";
-            label7.Size = new Size(51, 15);
-            label7.TabIndex = 14;
-            label7.Text = "Is Active";
+            label_isActive.AutoSize = true;
+            label_isActive.Location = new Point(111, 261);
+            label_isActive.Name = "label_isActive";
+            label_isActive.Size = new Size(51, 15);
+            label_isActive.TabIndex = 14;
+            label_isActive.Text = "Is Active";
             // 
             // textBox_discount
             // 
@@ -176,48 +176,48 @@
             textBox_discount.Size = new Size(500, 23);
             textBox_discount.TabIndex = 17;
             // 
-            // label8
+            // label_discount
             // 
-            label8.AutoSize = true;
-            label8.Location = new Point(111, 290);
-            label8.Name = "label8";
-            label8.Size = new Size(54, 15);
-            label8.TabIndex = 16;
-            label8.Text = "Discount";
+            label_discount.AutoSize = true;
+            label_discount.Location = new Point(111, 290);
+            label_discount.Name = "label_discount";
+            label_discount.Size = new Size(54, 15);
+            label_discount.TabIndex = 16;
+            label_discount.Text = "Discount";
             // 
-            // label9
+            // label_createdAt
             // 
-            label9.AutoSize = true;
-            label9.Location = new Point(111, 319);
-            label9.Name = "label9";
-            label9.Size = new Size(63, 15);
-            label9.TabIndex = 18;
-            label9.Text = "Created At";
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Location = new Point(111, 348);
-            label10.Name = "label10";
-            label10.Size = new Size(67, 15);
-            label10.TabIndex = 20;
-            label10.Text = "Updated At";
-            // 
-            // label_createAt
-            // 
-            label_createAt.AutoSize = true;
-            label_createAt.Location = new Point(208, 316);
-            label_createAt.Name = "label_createAt";
-            label_createAt.Size = new Size(0, 15);
-            label_createAt.TabIndex = 22;
+            label_createdAt.AutoSize = true;
+            label_createdAt.Location = new Point(111, 319);
+            label_createdAt.Name = "label_createdAt";
+            label_createdAt.Size = new Size(63, 15);
+            label_createdAt.TabIndex = 18;
+            label_createdAt.Text = "Created At";
             // 
             // label_updatedAt
             // 
             label_updatedAt.AutoSize = true;
-            label_updatedAt.Location = new Point(199, 348);
+            label_updatedAt.Location = new Point(111, 348);
             label_updatedAt.Name = "label_updatedAt";
-            label_updatedAt.Size = new Size(0, 15);
-            label_updatedAt.TabIndex = 23;
+            label_updatedAt.Size = new Size(67, 15);
+            label_updatedAt.TabIndex = 20;
+            label_updatedAt.Text = "Updated At";
+            // 
+            // value_createdAt
+            // 
+            value_createdAt.AutoSize = true;
+            value_createdAt.Location = new Point(208, 316);
+            value_createdAt.Name = "value_createdAt";
+            value_createdAt.Size = new Size(0, 15);
+            value_createdAt.TabIndex = 22;
+            // 
+            // value_updatedAt
+            // 
+            value_updatedAt.AutoSize = true;
+            value_updatedAt.Location = new Point(199, 348);
+            value_updatedAt.Name = "value_updatedAt";
+            value_updatedAt.Size = new Size(0, 15);
+            value_updatedAt.TabIndex = 23;
             // 
             // btn_cancel
             // 
@@ -256,25 +256,25 @@
             Controls.Add(checkBox_isActive);
             Controls.Add(btn_save);
             Controls.Add(btn_cancel);
+            Controls.Add(value_updatedAt);
+            Controls.Add(value_createdAt);
             Controls.Add(label_updatedAt);
-            Controls.Add(label_createAt);
-            Controls.Add(label10);
-            Controls.Add(label9);
+            Controls.Add(label_createdAt);
             Controls.Add(textBox_discount);
-            Controls.Add(label8);
-            Controls.Add(label7);
+            Controls.Add(label_discount);
+            Controls.Add(label_isActive);
             Controls.Add(textBox_stockQuantity);
-            Controls.Add(label6);
+            Controls.Add(labelstockQuantity);
             Controls.Add(textBox_price);
-            Controls.Add(label5);
+            Controls.Add(label_price);
             Controls.Add(textBox_category);
-            Controls.Add(label4);
+            Controls.Add(label_category);
             Controls.Add(textBox_desc);
-            Controls.Add(label3);
+            Controls.Add(label_dec);
             Controls.Add(textBox_name);
-            Controls.Add(label2);
+            Controls.Add(label_name);
+            Controls.Add(value_id);
             Controls.Add(label_id);
-            Controls.Add(label1);
             Controls.Add(label_title);
             Name = "CreateEditForm";
             Text = "Create Client";
@@ -285,27 +285,27 @@
         #endregion
 
         private Label label_title;
-        private Label label1;
         private Label label_id;
-        private Label label2;
+        private Label value_id;
+        private Label label_name;
         private TextBox textBox_name;
         private TextBox textBox_desc;
-        private Label label3;
+        private Label label_dec;
         private TextBox textBox_category;
-        private Label label4;
+        private Label label_category;
         private TextBox textBox_price;
-        private Label label5;
+        private Label label_price;
         private TextBox textBox_stockQuantity;
-        private Label label6;
-        private Label label7;
+        private Label labelstockQuantity;
+        private Label label_isActive;
         private TextBox textBox_discount;
-        private Label label8;
+        private Label label_discount;
         private TextBox textBox_createdAt;
-        private Label label9;
+        private Label label_createdAt;
         private TextBox textBox_updatedAt;
-        private Label label10;
-        private Label label_createAt;
         private Label label_updatedAt;
+        private Label value_createdAt;
+        private Label value_updatedAt;
         private Button btn_cancel;
         private Button btn_save;
         private CheckBox checkBox_isActive;
