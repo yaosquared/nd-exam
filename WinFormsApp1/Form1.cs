@@ -5,10 +5,12 @@ namespace WinFormsApp1
 {
     public partial class Form1 : Form
     {
+        private readonly ProductRepository _repo = new();
+
         public Form1()
         {
             InitializeComponent();
-
+            productsTable.AllowUserToAddRows = false;
             FetchProducts();
         }
 
@@ -27,9 +29,7 @@ namespace WinFormsApp1
             dataTable.Columns.Add("CreatedAt");
             dataTable.Columns.Add("UpdatedAt");
 
-
-            var repo = new ProductRepository();
-            var products = repo.GetProducts();
+            var products = _repo.GetProducts();
 
             foreach (var product in products)
             {
@@ -49,7 +49,7 @@ namespace WinFormsApp1
                 dataTable.Rows.Add(row);
             }
 
-            this.productsTable.DataSource = dataTable;
+            productsTable.DataSource = dataTable;
         }
 
         private void btn_editClient_Click(object sender, EventArgs e)
@@ -59,8 +59,7 @@ namespace WinFormsApp1
 
             int id = Convert.ToInt32(productsTable.CurrentRow.Cells["ID"].Value);
 
-            var repo = new ProductRepository();
-            var product = repo.GetProduct(id);
+            var product = _repo.GetProduct(id);
 
             if (product == null)
                 return;
@@ -72,10 +71,6 @@ namespace WinFormsApp1
             {
                 FetchProducts();
             }
-        }
-        private void productsTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void btn_addProduct_Click(object sender, EventArgs e)
@@ -114,8 +109,7 @@ namespace WinFormsApp1
             if (confirm != DialogResult.Yes)
                 return;
 
-            var repo = new ProductRepository();
-            repo.DeleteProduct(productId);
+            _repo.DeleteProduct(productId);
 
             FetchProducts();
         }
