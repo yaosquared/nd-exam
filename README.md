@@ -21,10 +21,10 @@ A Windows Forms application for managing products — supporting full CRUD opera
 
 ### Pre-Requisites
 
-- Visual Studio (2026 recommended)
+- Visual Studio (2026 preferred)
 - SQL Server Express
 - SQL Server Management Studio (SSMS)
-- .NET 10 (preferred)
+- .NET 9 (preferred)
 
 ### Project Setup
 
